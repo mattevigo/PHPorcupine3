@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+div.doc-header {
+	margin-bottom: 5px;	
+	padding-left: 5px;
+}
+
+div.doc-row {
+	margin-bottom: 5px;
+}
+
+div.doc-row-thumb {
+	float: left;
+	margin-bottom: 5px;
+}
+
+div.doc-row-details {
+	margin-left: 116px;
+}
+
+div.doc-row-attribute {
+	height: 30px;
+}
+
+div.doc-row-price {
+	clear: left;
+	text-align: right;
+}
+
+.doc-row-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+
+div.doc-note {
+	margin-top: 7px;
+}
+
+div.doc-answer {
+	margin-top: 7px;
+	margin-bottom: 3px;
+}
+
+div.doc-footer {
+	margin-top: 7px;
+}
+
+div.doc-button {
+	margin-top: 10px;
+}
+
+.doc-padding {
+	padding: 3px;
+}

@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+#post-title {
+	height: 30px;
+	width: 690px;
+	
+	font-size: 25px;
+}
+
+div#post-body {
+	margin-top: 30px;
+}

@@ -1,0 +1,198 @@
+@CHARSET "UTF-8";
+
+.bordered {
+	border: 1px solid #B0BDCC;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.input-standard {
+	height: 25px;
+}
+
+.header-standard {
+	padding: 3px;
+}
+
+.transparent {
+	
+}
+
+.opaque {
+	background-color: #000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+}
+
+/* ****** Informazioni Generali ****** */
+div#info {
+	
+}
+
+/* Logo */
+div#info-logo {
+	width: 250px;
+	float: left;
+}
+
+div#logo-header {
+	
+}
+
+div#logo-uploader {
+	
+}
+
+div#logo {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3px;
+	border: 1px solid #B0BDCC;
+	width: 220px;
+	height: 220px;
+}
+
+img#logo {
+	width: 220px;
+	height: 220px;
+}
+
+div#uploader-controls {
+	margin-top: 3px;
+	height: 34px;
+}
+
+div.file-uploader {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Details */
+div#info-details {
+	margin-left: 253px;
+}
+
+div#details-container {
+	padding: 5px;
+}
+
+div#details-title-container {
+	
+}
+
+input#title {
+	width: 460px;
+}
+
+div#details-description-container {
+	margin-top: 10px;
+}
+
+textarea#description {
+	width: 460px;
+	height: 170px;
+}
+
+/* ****** Multimedia ****** */
+div#multimedia {
+	margin-top: 10px;
+}
+
+div#multimedia-video {
+	
+}
+
+td.video-column-head {
+	height: 100px;
+	width: 140px;
+	text-align: center;
+}
+
+div#video-head-details {
+	font-size: 25px;
+	color: #B0BDCC;
+}
+
+td.video-column {
+	height: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #B0BDCC;
+	text-align: center;
+}
+
+div.video-column {
+	width: 120px;
+	height: 90px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.video-column-controls {
+	width: 120px;
+	height: 90px;
+	position: absolute;
+	display: block;
+	right: 0;
+	bottom: 0;
+}
+
+td#video-column-add {
+	width: 120px;
+	display: none;
+}
+
+div#multimedia-foto {
+	
+}
+
+td.foto-column-head {
+	height: 100px;
+	width: 140px;
+	text-align: center;
+}
+
+div#foto-head-details {
+	font-size: 25px;
+	color: #B0BDCC;
+}
+
+td.foto-column {
+	height: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #B0BDCC;
+	text-align: center;
+}
+
+div.foto-column {
+	width: 120px;
+	height: 90px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.foto-column-controls {
+	width: 120px;
+	height: 90px;
+	position: absolute;
+	display: block;
+	right: 0;
+	bottom: 0;
+}
+
+td#foto-column-add {
+	width: 120px;
+}
+
+div#header-image-image {
+	min-height: 300px;	
+}
+
+#header-image-uploader {
+	
+}

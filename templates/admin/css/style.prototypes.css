@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+div#foto {
+	margin-bottom: 20px;
+}
+
+ul.photogallery-photo-list
+{
+	list-style: none outside none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul.photogallery-photo-list li
+{
+	/*background: none repeat scroll 0 0 #CDCDCD;*/
+    float: left;
+    height: auto !important;
+    margin: 0 0 0 13px;
+    padding: 0 0 10 px;
+    position: relative;
+    width: 100px;
+}

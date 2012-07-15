@@ -1,0 +1,155 @@
+-- Create Table: sessions
+CREATE TABLE sessions
+(
+	`ID` VARCHAR(250)  NULL 
+	,PRIMARY KEY (ID)
+	,`start` VARCHAR(250)  NULL 
+	,`end` DATETIME  NULL 
+	,`user_agent` VARCHAR(500)  NULL 
+	,`ip` VARCHAR(250)  NULL 
+	,`user_id` BIGINT  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: permissions
+CREATE TABLE permissions
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`taxonomy_id` INT  NULL 
+	,PRIMARY KEY (taxonomy_id)
+	,`user_id` INT  NULL 
+	,PRIMARY KEY (user_id)
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: relationship
+CREATE TABLE relationship
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`seed_id` BIGINT NOT NULL 
+	,`taxonomy_id` BIGINT NOT NULL 
+	,`comment` VARCHAR(250)  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: users
+CREATE TABLE users
+(
+	`ID` VARCHAR(250) NOT NULL 
+	,PRIMARY KEY (ID)
+	,`username` VARCHAR(250) NOT NULL 
+	,`password` VARCHAR(250) NOT NULL 
+	,`email` VARCHAR(250) NOT NULL 
+	,`description` VARCHAR(250)  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: meta
+CREATE TABLE meta
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`value` VARCHAR(250)  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: seeds
+CREATE TABLE seeds
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`user_id` BIGINT NOT NULL 
+	,`creation_date` DATETIME NOT NULL 
+	,`update_date` DATETIME NOT NULL 
+	,`title` VARCHAR(250)  NULL 
+	,`subtitle` VARCHAR(250)  NULL 
+	,`body` VARCHAR(250)  NULL 
+	,`status` VARCHAR(250)  NULL 
+	,`type` VARCHAR(250)  NULL 
+	,`class` VARCHAR(250)  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: seed_meta
+CREATE TABLE seed_meta
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`seed_id` BIGINT NOT NULL 
+	,`meta_id` BIGINT NOT NULL 
+	,`type` VARCHAR(250)  NULL 
+	,`type_id` BIGINT  NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Table: taxonomies
+CREATE TABLE taxonomies
+(
+	`ID` BIGINT NOT NULL 
+	,PRIMARY KEY (ID)
+	,`parent_id` BIGINT  NULL 
+	,`name` VARCHAR(250) NOT NULL 
+	,`description` VARCHAR(250)  NULL 
+	,`type` VARCHAR(250)  NULL 
+	,`lft` BIGINT NOT NULL 
+	,`rgt` BIGINT NOT NULL 
+)
+ENGINE=INNODB
+
+
+
+-- Create Foreign Key: seed_meta.type_id -> taxonomies.ID
+ALTER TABLE seed_meta ADD FOREIGN KEY (type_id) REFERENCES taxonomies(ID);
+
+
+-- Create Foreign Key: permissions.ID -> taxonomies.ID
+ALTER TABLE permissions ADD FOREIGN KEY (ID) REFERENCES taxonomies(ID);
+
+
+-- Create Foreign Key: seeds.user_id -> users.ID
+ALTER TABLE seeds ADD FOREIGN KEY (user_id) REFERENCES users(ID);
+
+
+-- Create Foreign Key: relationship.seed_id -> seeds.ID
+ALTER TABLE relationship ADD FOREIGN KEY (seed_id) REFERENCES seeds(ID);
+
+
+-- Create Foreign Key: sessions.user_id -> users.ID
+ALTER TABLE sessions ADD FOREIGN KEY (user_id) REFERENCES users(ID);
+
+
+-- Create Foreign Key: taxonomies.parent_id -> taxonomies.ID
+ALTER TABLE taxonomies ADD FOREIGN KEY (parent_id) REFERENCES taxonomies(ID);
+
+
+-- Create Foreign Key: seed_meta.meta_id -> meta.ID
+ALTER TABLE seed_meta ADD FOREIGN KEY (meta_id) REFERENCES meta(ID);
+
+
+-- Create Foreign Key: relationship.taxonomy_id -> taxonomies.ID
+ALTER TABLE relationship ADD FOREIGN KEY (taxonomy_id) REFERENCES taxonomies(ID);
+
+
+-- Create Foreign Key: permissions.user_id -> users.ID
+ALTER TABLE permissions ADD FOREIGN KEY (user_id) REFERENCES users(ID);
+
+
+-- Create Foreign Key: seed_meta.seed_id -> seeds.ID
+ALTER TABLE seed_meta ADD FOREIGN KEY (seed_id) REFERENCES seeds(ID);
+
